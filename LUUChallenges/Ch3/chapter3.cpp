@@ -1,34 +1,32 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <string.h>
 
 using std::cout;
 using std::cin;
 using std::getline;
 using std::string;
 using std::vector;
+using std::stoi;
 
 //challenges for chapter 3
 
 void leapYear() {
 	int year = 0;
-	cout << "Please enter a year: ";
-	//input validation
-	while (cin) {
-		cin >> year;
-		if (year < 0) {
-			cin.clear();
-		} else {
-			break;
-		}
-	}
+	int month = 0;
+	int day = 0;
+	char ch;
+	cout << "Please enter a year (YYYY-MM-DD): ";
+	cin >> year >> ch >> month >> ch >> day;
+
 	//checking for leap year
 	if (year % 400 == 0) {
-		cout << "Leap year!";
+		cout << year << " is a leap year!";
 	} else if (year % 4 == 0 && year % 100 != 0) {
-		cout << "Leap year!";
+		cout << year << " is a leap year!";
 	} else {
-		cout << "Not a leap year!";
+		cout << year << " is not a leap year!";
 	}
 }
 
@@ -81,25 +79,8 @@ void maxArray() {
 
 int main() {
 
-	int x = 0;
-
-	cout << "Select function to test: \n" <<
-		"1. Leap year\n" <<
-		"2. Factors\n" <<
-		"3. Maximum number in array\n";
-	
-	cin >> x;
-	if (cin.fail() || x < 1 || x > 3) {
-		cout << "Invalid input. Please enter 1, 2, or 3. \n";
-	}
-	
-	switch (x) {
-	case 1: leapYear();
-		break;
-	case 2: allFactors();
-		break;
-	case 3: maxArray();
-		break;
-	}
+	leapYear();
+	allFactors();
+	maxArray();
 	
 }
