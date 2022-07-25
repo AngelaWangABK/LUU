@@ -4,8 +4,8 @@
 
 using std::string;
 
-class Vehicle {
-	
+class Vehicle 
+{
 public:
 	string model;
 	int year;
@@ -16,7 +16,8 @@ public:
 	virtual void Display();
 };
 
-class Car : public Vehicle {
+class Car : public Vehicle 
+{
 public:
 	int miles = 0;
 	Car(string c_model, int c_year, int miles);
@@ -24,13 +25,15 @@ public:
 	void Display() override;
 };
 
-class Boat : public Vehicle {
+class Boat : public Vehicle 
+{
 public:
 	Boat(string model, int year);
 	void Drive() override;
 };
 
-class Airplane : public Vehicle {
+class Airplane : public Vehicle 
+{
 public:
 	Airplane(string model, int year);
 	void Drive() override;

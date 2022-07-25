@@ -14,19 +14,22 @@ Create an object of each and demonstrate the Drive function works.
 */
 
 //Vehicle constructor
-Vehicle::Vehicle(string v_model, int v_year) {
+Vehicle::Vehicle(string v_model, int v_year) 
+{
 	model = v_model;
 	year = v_year;
 }
 
-Vehicle::~Vehicle() {
-}
+Vehicle::~Vehicle() 
+{}
 
-void Vehicle::Drive() {
+void Vehicle::Drive() 
+{
 	cout << "Driving vehicle..." << endl;
 }
 
-void Vehicle::Display() {
+void Vehicle::Display() 
+{
 	cout << "Model: " << model << ", "
 	<< "Year: " << year << endl;
 }
@@ -34,14 +37,16 @@ void Vehicle::Display() {
 //Car constructor inheriting from Vehicle
 Car::Car(string c_model, int c_year, int miles)
 	: Vehicle(c_model, c_year)
-	, miles (miles) {
-}
+	, miles (miles) 
+{}
 
-void Car::Drive() {
+void Car::Drive() 
+{
 	cout << "Driving car... Vroom!\n";
 }
 
-void Car::Display() {
+void Car::Display() 
+{
 	cout << "Model: " << model << ", "
 		<< "Year: " << year << ", "
 		<< "Mileage: " << miles << endl;
@@ -49,25 +54,26 @@ void Car::Display() {
 
 //Boat constructor inheriting from Vehicle
 Boat::Boat(string model, int year) 
-	 : Vehicle(model, year) {
+	 : Vehicle(model, year) 
+{}
 
-}
-
-void Boat::Drive() {
+void Boat::Drive() 
+{
 	cout << "Driving boat... Splash!\n";
 }
 
 //Airplane constructor inheriting from Vehicle
 Airplane::Airplane(string model, int year) 
-		 : Vehicle(model, year) {
+		 : Vehicle(model, year) 
+{}
 
-}
-
-void Airplane::Drive() {
+void Airplane::Drive() 
+{
 	cout << "Driving plane... Nyoom!\n";
 }
 
-int main() {
+int main() 
+{
 
 	Car c1("Tesla", 2031, 20000);
 	c1.Drive();
